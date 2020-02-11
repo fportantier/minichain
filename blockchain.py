@@ -89,11 +89,11 @@ class Blockchain:
         :return: The block or None if the a block does not exists
         """
 
-        if index < 1:
+        if index < 0:
             return None
 
         try:
-            return self.chain[index-1]
+            return self.chain[index]
         except IndexError:
             return None
 
