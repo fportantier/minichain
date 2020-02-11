@@ -37,7 +37,7 @@ class Blockchain:
         else:
             self.chain = []
             # Create the genesis block
-            self.new_block(previous_hash='1', proof=100)
+            self.chain.append(dict(index=0, previous_hash='1', proof=100, data={"msg" : "Genesis Block"}))
             self.save_chain()
 
 
