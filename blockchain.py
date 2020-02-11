@@ -155,19 +155,19 @@ class Blockchain:
     def insert_block(self, block):
 
         if not self.valid_proof(self.last_block['proof'], block['proof'], self.hash(self.last_block)):
-            print('invalid block proof')
+            print('Invalid proof')
             return False
 
         if block['index'] != (self.last_block['index'] + 1):
-            print('invalid block index')
+            print('Invalid index')
             return False
 
         if block['timestamp'] < self.last_block['timestamp']:
-            print('timestamp older than last block')
+            print('Timestamp older than last block')
             return False
 
         if block['timestamp'] > time():
-            print('timestamp in the future')
+            print('Timestamp in the future')
             return False
 
         self.chain.append(block)
